@@ -11,7 +11,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    
+    @post = Post.new(pose_params)
+    @post.save
+    redirect_to "/posts/#{@post.id}"
   
   end
 
@@ -19,6 +21,10 @@ class PostsController < ApplicationController
   end
 
   def update
+  end
+  
+  def post_params
+    params.require(:post).permit(:title, :body, :category)
   end
 
   def destroy
