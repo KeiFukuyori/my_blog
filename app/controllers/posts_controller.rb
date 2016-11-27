@@ -6,9 +6,13 @@ class PostsController < ApplicationController
   end
 
   def new
+    # フォーム用の空のインスタンスを生成
+    @post = Post.new
   end
 
   def create
+    
+  
   end
 
   def edit
